@@ -15,13 +15,10 @@ def fnPDF_FindText(xFile, xString):
 			return int(content[at+2:at+5])
 
 
-xFile = '/Users/ksreenivasareddy/Downloads/test1.pdf'
-test1 = '/Users/ksreenivasareddy/Downloads/test1'
+xFile = 'test1.pdf'
+test1 = 'test1'
 xString = 'summary of financial information'
 page_num = fnPDF_FindText(xFile, xString)
 print(page_num)
 
 tabula.convert_into(xFile, (test1 + '.csv'), output_format="csv", pages=page_num+4)
-
-# df = tabula.read_pdf(xFile, pages=page_num+4)
-# print(df)
