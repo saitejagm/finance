@@ -1,4 +1,4 @@
-# import tabula
+import tabula
 
 def fnPDF_FindText(xFile, xString):
 	import PyPDF2, re
@@ -16,6 +16,12 @@ def fnPDF_FindText(xFile, xString):
 
 
 xFile = '/Users/ksreenivasareddy/Downloads/test1.pdf'
+test1 = '/Users/ksreenivasareddy/Downloads/test1'
 xString = 'summary of financial information'
 page_num = fnPDF_FindText(xFile, xString)
 print(page_num)
+
+tabula.convert_into(xFile, (test1 + '.csv'), output_format="csv", pages=page_num+4)
+
+# df = tabula.read_pdf(xFile, pages=page_num+4)
+# print(df)
